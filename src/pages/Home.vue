@@ -31,10 +31,11 @@
 </template>
 
 <script lang="ts">
-import { ref, computed } from 'vue'
+import {ref, computed, onMounted} from 'vue'
 import { EleColorPicker } from 'vue3-colorpicker'
 import BSwitch from '@/components/atoms/BSwitch.vue'
 import BCanvas from '@/components/molecules/BCanvas.vue'
+import Logger from '@eggplantiny/logger.ts'
 
 export default {
   name: 'Home',
@@ -51,6 +52,9 @@ export default {
     // const result = computed(() => JSON.stringify(colors.value, null, 2))
     const result = computed(() => JSON.stringify(colors.value, null, 2))
     const hex = computed(() => colors.value.hex)
+    onMounted(() => {
+      Logger.log('Hello World!')
+    })
 
     return {
       colors,

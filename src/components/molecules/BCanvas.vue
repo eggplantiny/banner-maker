@@ -19,8 +19,8 @@ export default defineComponent({
     }
   },
   setup () {
-    const canvas = ref<HTMLCanvasElement>(null)
-    const ctx: CanvasRenderingContext2D = computed(() => canvas.value.getContext('2d'))``
+    const canvas = ref<HTMLCanvasElement | null>(null)
+    const ctx: CanvasRenderingContext2D = computed(() => canvas.value?.getContext('2d'))
 
     return {
       canvas,
